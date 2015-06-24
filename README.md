@@ -13,3 +13,5 @@ var xhr = xhrpolyfill();
 <script src="https://wzrd.in/standalone/xhrpolyfill"></script>
 ```
 
+# Recommendation
+If you search for a convenient cross-browser way to make all kinds of AJAX Requests, I recommend you to check out [minixhr](https://github.com/serapath/minixhr)
