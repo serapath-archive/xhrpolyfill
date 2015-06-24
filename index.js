@@ -7,9 +7,12 @@ var factories = [
   function () {return new ActiveXObject("Microsoft.XMLHTTP");},  // IE5
   function () {return null;}
 ];
-module.exports = function getXHR() {
+module.exports = function getXHR(param) {
   for (var i=0, xhr, len=factories.length; i<len; i++) {
-    try       { xhr = factories[i](); return xhr; }
-    catch (e) { continue; }
+    try {
+      xhr = factories[i]();
+      if (param.global) { window.XMLHttpRequest = factories[i]; }
+      return xhr;
+    } catch (e) { continue; }
   }
 };
