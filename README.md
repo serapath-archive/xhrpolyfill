@@ -3,9 +3,15 @@ cross browser xhr object
 
 # USAGE
 ```js
-var xhrpolyfill = require('xhrpolyfill'); // polyfills window.XMLHttpRequest
-var xhr = xhrpolyfill();
-// => return new XMLHttpRequest();
+var xhr
+
+var XMLHttpRequest = require('xhrpolyfill') // polyfills window.XMLHttpRequest
+
+xhr = new XMLHttpRequest()
+// same as
+xhr = XMLHttpRequest()
+// same as
+xhr = new window.XMLHttpRequest() // polyfilled by the require call above
 ```
 
 ```html
@@ -14,4 +20,5 @@ var xhr = xhrpolyfill();
 ```
 
 # Recommendation
-If you search for a convenient cross-browser way to make all kinds of AJAX Requests, I recommend you to check out [minixhr](https://github.com/serapath/minixhr)
+If you search for a convenient cross-browser way to make all kinds of AJAX Requests,  
+I recommend you to check out [minixhr](https://github.com/serapath/minixhr)
